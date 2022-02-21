@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>VFHE</title>
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        svg: {
+          fontCache: 'global'
+        }
+      };
+      </script>
+      <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+      </script>
+  </head>
+  <body>
+    <main>
+      <div class="container py-4">
+        <header class="pb-3 mb-4 border-bottom position-relative">
+          <a href="#" class="d-flex align-items-center text-dark text-decoration-none">
+            <svg width="139.99" height="35.401" viewBox="0 0 139.99 35.401" xmlns="http://www.w3.org/2000/svg"><g id="svgGroup" stroke-linecap="round" fill-rule="evenodd" font-size="9pt" stroke="#000" stroke-width="0.25mm" fill="black" style="stroke:#000;stroke-width:0.25mm;fill:black"><path d="M 103.662 2.417 L 103.662 32.154 L 108.276 32.154 L 108.276 34.253 Q 107.856 34.463 107.135 34.662 A 12.661 12.661 0 0 1 107.068 34.681 A 16.599 16.599 0 0 1 106.152 34.899 A 21.304 21.304 0 0 1 105.371 35.047 Q 104.443 35.205 103.418 35.303 A 21.118 21.118 0 0 1 101.418 35.401 L 101.416 35.401 A 11.863 11.863 0 0 1 100.69 35.379 A 9.232 9.232 0 0 1 100.024 35.315 A 3.634 3.634 0 0 1 99.45 35.192 A 2.717 2.717 0 0 1 98.926 34.973 A 1.913 1.913 0 0 1 98.193 34.265 A 1.714 1.714 0 0 1 98.015 33.83 Q 97.925 33.495 97.925 33.057 L 97.925 18.604 L 81.055 18.604 L 81.055 27.271 A 48.775 48.775 0 0 0 81.071 28.568 Q 81.092 29.357 81.14 30.03 A 35.327 35.327 0 0 0 81.211 30.884 Q 81.256 31.349 81.309 31.757 A 19.034 19.034 0 0 0 81.36 32.117 A 45.417 45.417 0 0 0 81.426 32.544 Q 81.524 33.153 81.615 33.599 A 15.464 15.464 0 0 0 81.616 33.606 Q 81.725 34.141 81.796 34.491 A 128.392 128.392 0 0 1 81.812 34.571 A 5.753 5.753 0 0 1 81.325 34.8 A 6.878 6.878 0 0 1 81.006 34.925 A 7.969 7.969 0 0 1 80.09 35.193 Q 79.614 35.303 79.15 35.352 A 8.984 8.984 0 0 1 78.59 35.394 A 7.538 7.538 0 0 1 78.271 35.401 A 5.841 5.841 0 0 1 77.511 35.353 A 4.883 4.883 0 0 1 77.087 35.279 A 2.862 2.862 0 0 1 76.563 35.111 A 2.252 2.252 0 0 1 76.147 34.876 A 1.883 1.883 0 0 1 75.565 34.188 A 2.226 2.226 0 0 1 75.537 34.131 A 2.086 2.086 0 0 1 75.387 33.679 Q 75.339 33.458 75.324 33.201 A 4.165 4.165 0 0 1 75.317 32.959 L 75.317 3.052 L 70.605 3.052 L 70.605 1.123 A 2.805 2.805 0 0 1 70.863 1.004 Q 71.117 0.9 71.475 0.796 A 10.839 10.839 0 0 1 71.704 0.733 A 16.554 16.554 0 0 1 72.389 0.567 Q 72.741 0.489 73.134 0.415 A 28.325 28.325 0 0 1 73.401 0.367 A 21.242 21.242 0 0 1 74.544 0.197 A 27.066 27.066 0 0 1 75.513 0.098 A 27.633 27.633 0 0 1 77.856 0 L 78.955 0 L 79.81 0 A 2.342 2.342 0 0 1 80.109 0.018 Q 80.269 0.039 80.406 0.084 A 1.331 1.331 0 0 1 80.481 0.11 A 0.822 0.822 0 0 1 80.908 0.476 A 0.88 0.88 0 0 1 80.988 0.672 Q 81.055 0.907 81.055 1.27 L 81.055 15.161 L 97.925 15.161 L 97.925 7.91 A 49.458 49.458 0 0 0 97.913 6.794 Q 97.893 5.909 97.839 5.176 A 32.973 32.973 0 0 0 97.768 4.342 Q 97.728 3.931 97.68 3.568 A 17.332 17.332 0 0 0 97.62 3.15 A 39.334 39.334 0 0 0 97.553 2.741 Q 97.458 2.174 97.369 1.761 A 13.394 13.394 0 0 0 97.363 1.734 Q 97.247 1.2 97.175 0.843 A 30.192 30.192 0 0 1 97.168 0.806 A 5.753 5.753 0 0 1 97.654 0.576 A 6.878 6.878 0 0 1 97.974 0.452 A 6.591 6.591 0 0 1 98.889 0.196 Q 99.365 0.098 99.829 0.049 A 8.984 8.984 0 0 1 100.39 0.007 A 7.538 7.538 0 0 1 100.708 0 A 5.841 5.841 0 0 1 101.468 0.048 A 4.883 4.883 0 0 1 101.892 0.122 Q 102.441 0.244 102.832 0.513 A 1.733 1.733 0 0 1 103.354 1.086 A 2.139 2.139 0 0 1 103.442 1.258 Q 103.64 1.686 103.66 2.282 A 4.063 4.063 0 0 1 103.662 2.417 Z M 116.187 32.862 L 116.187 3.418 L 111.523 3.418 L 111.523 1.465 A 6.611 6.611 0 0 1 111.944 1.342 Q 112.656 1.157 113.855 0.965 A 51.028 51.028 0 0 1 115.132 0.778 Q 116.26 0.626 117.603 0.489 A 84.082 84.082 0 0 1 119.855 0.29 A 108.926 108.926 0 0 1 122.314 0.135 A 99.885 99.885 0 0 1 127.539 0 A 124.984 124.984 0 0 1 128.745 0.006 A 164.693 164.693 0 0 1 130.066 0.025 A 62.505 62.505 0 0 1 132.825 0.135 A 53.088 53.088 0 0 1 135.336 0.348 A 48.542 48.542 0 0 1 135.498 0.367 Q 136.706 0.503 137.659 0.746 A 11.352 11.352 0 0 1 137.793 0.782 A 7.574 7.574 0 0 1 138.474 0.997 Q 139.014 1.198 139.392 1.453 A 1.748 1.748 0 0 1 139.695 1.706 Q 139.872 1.896 139.943 2.115 A 0.974 0.974 0 0 1 139.99 2.417 Q 139.99 2.631 139.757 3.142 A 8.208 8.208 0 0 1 139.685 3.296 A 22.133 22.133 0 0 1 139.27 4.114 A 26.665 26.665 0 0 1 138.989 4.627 A 42.742 42.742 0 0 1 138.511 5.458 A 35.183 35.183 0 0 1 138.232 5.921 A 28.748 28.748 0 0 1 138.104 6.129 Q 137.907 6.444 137.803 6.589 A 1.433 1.433 0 0 1 137.744 6.665 A 0.03 0.03 0 0 0 137.734 6.653 Q 137.663 6.586 137.097 6.201 A 5.7 5.7 0 0 0 136.635 5.922 Q 136.13 5.645 135.392 5.338 A 22.25 22.25 0 0 0 135.144 5.237 A 15.412 15.412 0 0 0 134.073 4.855 Q 133.105 4.547 131.885 4.273 A 17.508 17.508 0 0 0 130.054 3.968 Q 128.799 3.823 127.344 3.809 L 121.924 3.76 L 121.924 15.308 L 134.839 15.308 L 134.839 16.504 Q 134.839 17.594 134.449 18.104 A 1.145 1.145 0 0 1 134.29 18.274 Q 133.761 18.732 132.635 18.75 A 5.826 5.826 0 0 1 132.544 18.75 L 121.924 18.75 L 121.924 31.519 L 126.343 31.519 A 49.641 49.641 0 0 0 132.91 31.079 Q 136.206 30.64 139.38 29.615 A 0.088 0.088 0 0 0 139.382 29.63 Q 139.391 29.67 139.429 29.794 A 12.42 12.42 0 0 0 139.453 29.87 Q 139.526 30.103 139.624 30.493 A 10.043 10.043 0 0 1 139.713 30.884 Q 139.756 31.089 139.796 31.319 A 16.523 16.523 0 0 1 139.807 31.385 A 5.867 5.867 0 0 1 139.893 32.373 A 3.583 3.583 0 0 1 139.835 33.036 Q 139.766 33.406 139.61 33.695 A 1.743 1.743 0 0 1 139.307 34.107 Q 138.721 34.693 137.427 34.949 A 11.667 11.667 0 0 1 136.538 35.087 Q 135.507 35.209 134.113 35.229 A 36.503 36.503 0 0 1 134.021 35.23 A 321.778 321.778 0 0 1 132.308 35.245 Q 130.774 35.254 128.882 35.254 A 228.302 228.302 0 0 1 125.549 35.23 Q 123.877 35.205 122.424 35.169 A 112.494 112.494 0 0 1 121.214 35.132 Q 120.66 35.112 120.162 35.088 A 66.135 66.135 0 0 1 119.836 35.071 Q 118.701 35.01 118.091 34.961 A 4.689 4.689 0 0 1 117.565 34.889 Q 116.849 34.745 116.565 34.388 Q 116.211 33.942 116.188 32.993 A 5.527 5.527 0 0 1 116.187 32.862 Z M 10.205 1.563 L 22.095 29.761 L 22.412 29.761 A 810.845 810.845 0 0 1 23.767 26.828 A 667.735 667.735 0 0 1 25.049 24.085 A 77.775 77.775 0 0 0 26.617 20.529 A 66.538 66.538 0 0 0 27.234 18.97 Q 28.174 16.504 28.735 14.112 A 21.62 21.62 0 0 0 29.297 9.156 Q 29.297 7.471 29.028 5.701 A 23.842 23.842 0 0 0 28.574 3.467 A 29.65 29.65 0 0 0 28.149 1.953 L 32.104 0.269 A 3.191 3.191 0 0 1 32.351 0.158 Q 32.473 0.109 32.585 0.079 A 1.573 1.573 0 0 1 32.715 0.049 A 2.997 2.997 0 0 1 33.252 0 A 1.558 1.558 0 0 1 34.479 0.559 A 2.216 2.216 0 0 1 34.68 0.83 A 3.082 3.082 0 0 1 35.044 1.681 Q 35.145 2.056 35.182 2.497 A 6.505 6.505 0 0 1 35.205 3.052 A 11.587 11.587 0 0 1 35.151 4.12 Q 35.056 5.147 34.79 6.446 A 43.984 43.984 0 0 1 34.361 8.317 Q 34.123 9.266 33.824 10.307 A 73.942 73.942 0 0 1 33.618 11.011 A 74.098 74.098 0 0 1 32.776 13.648 A 95.078 95.078 0 0 1 31.763 16.48 A 133.5 133.5 0 0 1 29.971 20.998 A 152.981 152.981 0 0 1 29.309 22.559 A 132.97 132.97 0 0 1 26.543 28.561 A 145.218 145.218 0 0 1 26.343 28.968 A 138.49 138.49 0 0 1 22.949 35.401 L 20.459 35.401 Q 19.935 35.401 19.529 35.323 A 3.329 3.329 0 0 1 19.434 35.303 A 2.455 2.455 0 0 1 18.962 35.149 A 2.031 2.031 0 0 1 18.665 34.986 A 2.12 2.12 0 0 1 18.276 34.649 A 2.723 2.723 0 0 1 18.066 34.388 A 3.792 3.792 0 0 1 17.844 34.031 Q 17.742 33.846 17.643 33.628 A 7.278 7.278 0 0 1 17.554 33.423 L 5.054 4.322 L 0.806 6.25 L 0 4.517 A 14.184 14.184 0 0 1 0.47 4.105 Q 0.967 3.687 1.648 3.174 Q 2.686 2.393 3.857 1.685 A 19.193 19.193 0 0 1 5.583 0.755 A 16.707 16.707 0 0 1 6.177 0.489 A 7.814 7.814 0 0 1 6.924 0.212 Q 7.608 0 8.154 0 A 1.973 1.973 0 0 1 9.302 0.354 A 1.982 1.982 0 0 1 9.691 0.716 Q 9.848 0.903 9.991 1.148 A 4.659 4.659 0 0 1 10.205 1.563 Z M 44.507 32.959 L 44.507 3.418 L 39.844 3.418 L 39.844 1.465 A 6.611 6.611 0 0 1 40.264 1.342 Q 40.976 1.157 42.175 0.965 A 51.028 51.028 0 0 1 43.452 0.778 Q 44.58 0.626 45.923 0.489 A 84.082 84.082 0 0 1 48.175 0.29 A 108.926 108.926 0 0 1 50.635 0.135 A 99.885 99.885 0 0 1 55.859 0 A 124.984 124.984 0 0 1 57.065 0.006 A 164.693 164.693 0 0 1 58.386 0.025 A 62.505 62.505 0 0 1 61.145 0.135 A 53.088 53.088 0 0 1 63.656 0.348 A 48.542 48.542 0 0 1 63.818 0.367 Q 65.026 0.503 65.979 0.746 A 11.352 11.352 0 0 1 66.113 0.782 A 7.574 7.574 0 0 1 66.794 0.997 Q 67.334 1.198 67.712 1.453 A 1.748 1.748 0 0 1 68.015 1.706 Q 68.193 1.896 68.264 2.115 A 0.974 0.974 0 0 1 68.311 2.417 Q 68.311 2.631 68.078 3.142 A 8.208 8.208 0 0 1 68.005 3.296 A 22.133 22.133 0 0 1 67.591 4.114 A 26.665 26.665 0 0 1 67.31 4.627 A 42.742 42.742 0 0 1 66.831 5.458 A 35.183 35.183 0 0 1 66.553 5.921 A 28.748 28.748 0 0 1 66.424 6.129 Q 66.228 6.444 66.123 6.589 A 1.433 1.433 0 0 1 66.064 6.665 A 0.03 0.03 0 0 0 66.054 6.653 Q 65.984 6.586 65.417 6.201 A 5.7 5.7 0 0 0 64.955 5.922 Q 64.45 5.645 63.712 5.338 A 22.25 22.25 0 0 0 63.464 5.237 A 15.412 15.412 0 0 0 62.394 4.855 Q 61.426 4.547 60.205 4.273 A 17.508 17.508 0 0 0 58.375 3.968 Q 57.12 3.823 55.664 3.809 L 50.244 3.809 L 50.244 15.308 L 63.159 15.308 L 63.159 16.504 Q 63.159 17.594 62.769 18.104 A 1.145 1.145 0 0 1 62.61 18.274 Q 62.082 18.732 60.955 18.75 A 5.826 5.826 0 0 1 60.864 18.75 L 50.244 18.75 L 50.244 27.222 Q 50.244 28.785 50.354 29.993 A 32.818 32.818 0 0 0 50.443 30.855 Q 50.523 31.536 50.623 32.093 A 36.818 36.818 0 0 0 50.74 32.721 Q 50.836 33.213 50.928 33.594 A 47.297 47.297 0 0 1 50.996 33.884 Q 51.093 34.296 51.147 34.571 Q 50.781 34.766 50.33 34.925 A 8.023 8.023 0 0 1 49.502 35.165 A 8.904 8.904 0 0 1 49.377 35.193 A 8.603 8.603 0 0 1 48.389 35.352 A 9.837 9.837 0 0 1 47.74 35.396 A 8.333 8.333 0 0 1 47.461 35.401 A 5.841 5.841 0 0 1 46.701 35.353 A 4.883 4.883 0 0 1 46.277 35.279 A 2.862 2.862 0 0 1 45.753 35.111 A 2.252 2.252 0 0 1 45.337 34.876 A 1.883 1.883 0 0 1 44.755 34.188 A 2.226 2.226 0 0 1 44.727 34.131 A 2.086 2.086 0 0 1 44.576 33.679 Q 44.529 33.458 44.514 33.201 A 4.165 4.165 0 0 1 44.507 32.959 Z" vector-effect="non-scaling-stroke"/></g></svg>
+          </a>
+          
+          <div class="position-absolute top-50 end-0 translate-middle-y">
+            <a href="index.html" class="me-3">Home</a>
+            <a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">About</a>
+          </div>
+          
+        </header>
+    
+        <div class="p-5 mb-4 bg-light rounded-3">
+          <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">Visualizing FHE</h1>
+            <p class="col-md-8 fs-4">A tool for visualizing the symetries embodied in fully homomorphic encryption (FHE) and some of its properties via the analyzis of (merely) illustrative constructions.</p>
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Context, Motivations, and Goals</button>
+          </div>
+        </div>
+
+        <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Context, Motivations, and Goals</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <p>VFHE is made and maintained by David William Silva (dsilva@algemetric.com).</p>
+            <p>David is a Senior Research Scientist at <a href="https://algemetric.com" target="blank">Algemetric</a>.</p>
+            <h6>Context</h6>
+            <p>-</p>
+            <h6>Motivations</h6>
+            <p>-</p>
+            <h6>Goals</h6>
+            <p>-</p>
+          </div>
+
+        </div>
+    
+        <div class="row align-items-md-stretch pb-3">
+          <div class="col-md-6">
+            <div class="h-100 p-5 bg-light border rounded-3">
+              <h2>Example #1</h2>
+              <p>In this example, given $p,q,r$ and $n = pqr$, we have a message space in $\mathbb{Z}_{q}$. For all $m \in \mathbb{Z}_{q}$, encryption is given by $c = m + dpq \bmod n$ for $d \leftarrow {0,\ldots,r-1}$. We set $p=5,q=3,r=4$.</p>
+              <p>Decryption is given by $m = c \bmod q$. Homomorphic addition and multiplication are given by $c_{3} = c_1 + c_2 \bmod n$ and $c_{4} = c_1 c_2 \bmod n$ for all $c_1,c_2,c_3,c_4 \in \mathbb{Z}_{n}$.</p>
+              <p>In this simple example we can identify the patterns of linear and non-linear mappings as well as encryption and homomorphic correctness using color codes.</p>
+              <a class="btn btn-outline-secondary" type="button" href="example_1.html">See Example #1</a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="h-100 p-5 bg-light border rounded-3">
+              <h2>Example #2</h2>
+              <p>This example is similar to Example #1 except this time we allow a larger message space. We set $p=5,q=7,r=4$.</p>
+              <p>With more messages to encrypt, we see different patterns for non-linear mappings, still keeping the cyclic nature of the results.</p>
+              <p>This modification does not affect correctness.</p>
+              <a class="btn btn-outline-secondary" type="button" href="example_2.html">See Example #2</a>
+            </div>
+          </div>
+        </div>
+        <div class="row align-items-md-stretch pb-3">
+          <div class="col-md-6">
+            <div class="h-100 p-5 bg-light border rounded-3">
+              <h2>Example #3</h2>
+              <p>In this example, we force a situation where correctness will fail. Encrption is given by $c = ((dq + m) + dpq) \bmod n$ and decryption is given by $m = (c \bmod p) \bmod q$. We set $p=11,q=5,r=4$.</p>
+              <p>This configuration generates large tables so the page might take a while to fully load.</p>
+              <p>As expected, correctness fails for most cases. But even then we can see patterns in the failures.</p>
+              <a class="btn btn-outline-secondary" type="button" href="example_3.html">See Example #3</a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="h-100 p-5 bg-light border rounded-3">
+              <h2>Example #4</h2>
+              <p>In this example, we repeat the same as in Example #3 except this time decryption is given by $m = c \bmod q$, which fixes the previous correctness issue.</p>
+              <a class="btn btn-outline-secondary" type="button" href="example_4.html">See Example #4</a>
+            </div>
+          </div>
+        </div>
+        <div class="row align-items-md-stretch pb-3">
+          <div class="col-md-6">
+            <div class="h-100 p-5 text-white bg-dark rounded-3">
+              <h2>Example #5</h2>
+              <p>In this example, encryption is given by $c = d1*q + m + d2 * p \bmod n$ for $d_1 \leftarrow \{1,\ldots,r-1\}$ and $d_2 \leftarrow \{r,\ldots,2r-1\}$. Decryption is given by $m = (c \bmod p) \bmod q$.</p>
+              <p>We have now $r(r - 1)$ distinct encryptions for each one of the $q$ plaintexts.</p>
+              <p>Correctness fails in many cases. Still, it is interesting to see that correctness fails always in the same pattern, which creates identical shapes, one for addition and another one for multiplication.</p>
+              <a class="btn btn-outline-secondary" type="button" href="example_5.html">See Example #4</a>
+            </div>
+          </div>
+          <!-- block -->
+        </div>
+    
+        <footer class="pt-3 mt-4 text-muted border-top">
+          &copy; 2022
+        </footer>
+      </div>
+    </main>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>
